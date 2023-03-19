@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,600&family=Roboto&display=swap');
+
+#root {
+  height: 100vh;   
+  background:#f00;
+  overflow: auto;
+  width: 100%;
+  margin: 0 ;
+  padding: 0;
+  text-align: center;
+  background-color: black;
+}
+.main{
+  height: 100%;
+  margin: auto;
+  max-width:1200px;
+  background-color: black;
+}
+
+
+
+.app-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+  height: 64px;
+  padding: 0 16px;
+}
+
+.app-bar-website-name {
+  font-size: 24px;
+  color: #f00;
+  font-weight: bolder;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.app-bar-search {
+  display: flex;
+  align-items: center;
+}
+
+.app-bar-search input[type="text"] {
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+}
+
+.app-bar-search-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border-color 0.5s ease-in-out ;
+
+}
+
+.app-bar-search-button:hover {
+  opacity: 0.8;
+  color: #f00;
+}
+.app-bar-search-button:focus{
+  outline: none;
+}
+
+
+.app-bar-watchlist {
+  display: flex;
+  align-items: center;
+}
+
+.app-bar-watchlist-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background-color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.app-bar-watchlist-button:hover {
+  opacity: 0.8; 
+  color: #f00;
+}
+.app-bar-watchlist-button:focus {
+  outline: none;
+}
+.app-bar-watchlist-button:active {
+  opacity: 0.8;
+  color: rgb(255, 0, 0);
+  border-radius: 10px;
+  background-color: darkred;
+}
+
+.trcon{
+  width: 70%;
+  height: 500px;
+  margin: auto;
+  display: flex;
+}
+
+.trdescription{
+  flex-basis: 60%;
+  
+  margin-left: 10px;
+}
+.trbox{
+  margin-top: 5px;
+  padding: 5px;
+  width: 480px;
+  background-color: #404040;
+  border-radius: 20px;
+  position: relative;
+}
+.trtitle{
+  position: absolute;
+  left: 15px;
+}
+.trdesbox{
+padding-left: 10px;
+text-align: start;
+}
+.trthumbnail{
+  background-color: lightsalmon;
+  flex-basis: 40%;
+
+}
+
+.controlpanel{
+  height: 50px;
+  margin: 0px 80px 0px 80px;
+  display: flex;
+}
+
+.rightarrow{
+  height: 100%;
+  width:10%;
+  background-color: darkslategrey;
+
+}
+.leftarrow{
+  height: 100%;
+  width:10%;
+  background-color: lightskyblue;
+
+}
+.dots{
+  height: 100%;
+  width:80%;
+  background-color: rebeccapurple;
+}
+
+.popularnow{
+  height: 329px;
+  width: 100%;
+  display: flex;
+}
+.card{
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.CardText{
+  background-color: black;
+  color: #fff;
+  
+}
+
+.footer{
+  height: 200px;
+  width: 100%;
+  background-color: black;
+}
