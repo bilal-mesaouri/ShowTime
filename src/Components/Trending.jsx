@@ -1,14 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import avengers from '../assets/avengers.jpg'
 import './Trending.css'
-import Alert from '@mui/material/Alert';
-import TextField from '@mui/material/TextField';
-import Box from '@mui/material/Box';
+import { AiOutlineRightCircle,AiOutlineLeftCircle } from 'react-icons/ai';
+
 
 function Trending() {
+  const [btn,setBtn] = useState(0);
   return (
     <div className="trcontainer">
+      <div className="popularnowtitle">
+        What to Watch ?
+      </div>
       <div className="trcon">
+      <div className="change_btn">
+      <AiOutlineLeftCircle className='icons' onClick={()=>{setBtn(2)}}/>
+          </div>
         <div className="trthumbnail">
           <img src={avengers} alt="avengers" className="thumbnail-image" />
         </div>
@@ -23,22 +29,18 @@ function Trending() {
             Avengers assemble once more in order to reverse Thanos' actions
             and restore balance to the universe.
           </span>
-          <div className="info">
+          
             <span className="trbox"><span className='trtitle'>Release date :</span> April 26, 2019</span>
             <span className="trbox"><span className='trtitle'>Rating :</span>Rating: 8.4/10</span>
             <span className="trbox"><span className='trtitle'>Runtime :</span> 3h 1min</span>
-          </div>
+          
         </div>
+          <div className="change_btn">
+          <AiOutlineRightCircle className='icons' onClick={()=>{console.log("asd");setBtn(1)}}/>
+          </div>
       </div>
       <div className="controlpanel">
-{/*         <div className="leftarrow">
-        </div>
-        <div className="dots">
 
-        </div>
-        <div className="rightarrow">
-
-        </div> */}
       </div>
     </div>
   )

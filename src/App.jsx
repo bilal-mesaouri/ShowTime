@@ -13,6 +13,7 @@ function App() {
         <PrimarySearchAppBar/>
         <Trending/>
         <PopularNow/>
+        <PopularNow/>
         <div className="footer">
           
         </div>
