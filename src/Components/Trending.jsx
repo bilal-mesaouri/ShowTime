@@ -1,49 +1,79 @@
-import React, { useState } from 'react'
-import avengers from '../assets/avengers.jpg'
-import './Trending.css'
-import { AiOutlineRightCircle,AiOutlineLeftCircle } from 'react-icons/ai';
+import React, { useState, useEffect } from "react";
+import avengers from "../assets/avengers.jpg";
+import "./Trending.css";
+import { AiOutlineRightCircle, AiOutlineLeftCircle } from "react-icons/ai";
+import { useLocation } from "react-router-dom";
 
+function Trending(props) {
+  let location = useLocation();
+  const [Index, setIndex] = useState(0);
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  };
+  const arr = [];
+  location.state && arr.push(location.state.data);
+  const [Datos, setDatos] = useState(location.state == null ? props.data : arr);
+  location.state && console.log(location.state.data);
 
-function Trending() {
-  const [btn,setBtn] = useState(0);
   return (
     <div className="trcontainer">
-      <div className="popularnowtitle">
-        What to Watch ?
-      </div>
+      <div className="popularnowtitle">{props.title}</div>
       <div className="trcon">
-      <div className="change_btn">
-      <AiOutlineLeftCircle className='icons' onClick={()=>{setBtn(2)}}/>
-          </div>
+        <div className="change_btn">
+          {props.parent == "home" && (
+            <AiOutlineLeftCircle
+              className="icons"
+              onClick={() => {
+                if (Index > 0) setIndex(Index - 1);
+              }}
+            />
+          )}
+        </div>
         <div className="trthumbnail">
-          <img src={avengers} alt="avengers" className="thumbnail-image" />
+          <img
+            src={Datos[Index]['img']}
+            alt="avengers"
+            className="thumbnail-image"
+          />
         </div>
         <div className="trdescription">
-          <h3 className="title">Avengers: Endgame</h3>
-          <span className="trbox">
-          <div className="trdesbox" >
-          Description :
-          </div>
-            After the devastating events of Avengers: Infinity War (2018),
-            the universe is in ruins. With the help of remaining allies, the
-            Avengers assemble once more in order to reverse Thanos' actions
-            and restore balance to the universe.
+          <h3 className="title">{Datos[Index]["title"]}</h3>
+          <span className="trbox" style={{ paddingBottom: "15px" }}>
+            <div className="trdesbox">Description :</div>
+            {Datos[Index]["plot"]}
           </span>
-          
-            <span className="trbox"><span className='trtitle'>Release date :</span> April 26, 2019</span>
-            <span className="trbox"><span className='trtitle'>Rating :</span>Rating: 8.4/10</span>
-            <span className="trbox"><span className='trtitle'>Runtime :</span> 3h 1min</span>
-          
-        </div>
-          <div className="change_btn">
-          <AiOutlineRightCircle className='icons' onClick={()=>{console.log("asd");setBtn(1)}}/>
-          </div>
-      </div>
-      <div className="controlpanel">
 
+          <span className="trbox">
+            <span className="trtitle">Release date :</span>{" "}
+            {new Date(Datos[Index]["date"]).toLocaleDateString(
+              "en-us",
+              options
+            )}
+          </span>
+          <span className="trbox">
+            <span className="trtitle">Rating :</span>Rating: 8.4/10
+          </span>
+          <span className="trbox">
+            <span className="trtitle">Runtime :</span> 3h 1min
+          </span>
+        </div>
+        <div className="change_btn">
+          {props.parent == "home" && (
+            <AiOutlineRightCircle
+              className="icons"
+              onClick={() => {
+                if (Index < props.data.length - 1) setIndex(Index + 1);
+              }}
+            />
+          )}
+        </div>
       </div>
+      <div className="controlpanel"></div>
     </div>
-  )
+  );
 }
 
-export default Trending
+export default Trending;

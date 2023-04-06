@@ -2,18 +2,22 @@ import React from 'react'
 import ImgMediaCard from './card'
 import avengers from '../assets/avengers.jpg'
 
-function PopularNow() {
+function PopularNow(props) {
+  React.useEffect(() => {
+    props.data&&console.log(props.data);
+
+  }, [])
+  
   return (
     <div className="pop_container">
-
-        <div className="popularnowtitle">
-          Popular now 
-        </div>
+        {props.title!=""?<div className="popularnowtitle">
+          {props.title}
+        </div>:null}
       <div className="popularnow">
-          <ImgMediaCard link='public/avengers.jpg'/>
-          <ImgMediaCard link='public/clarcksonsfarm.jpg'/>
-          <ImgMediaCard link='public/Drive.jfif'/> 
-          <ImgMediaCard link='src/assets/Rush.jfif'/> 
+          <ImgMediaCard data={props.data[0]} />
+          <ImgMediaCard data={props.data[1]} />
+          <ImgMediaCard data={props.data[2]} /> 
+          <ImgMediaCard data={props.data[3]} /> 
 
 
       </div>
