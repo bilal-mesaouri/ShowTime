@@ -218,3 +218,32 @@
   width: 100%;
   background-color: black;
 }
+
+
+.circular-image {
+  border-radius: 50%;
+  margin-right:25px;
+  
+}
+
+.actor{
+  display: flex;
+}
+
+.grid-container {
+  width:80%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 equal-width columns */
+  grid-gap: 20px; /* space between items */
+}
+
+.grid-item {
+  /* background-color: #ccc; */
+  justify-content: center;
+  padding: 10px;
+  align-items: center;
+}
+
+.actor-info{
+  margin:3px;
+}

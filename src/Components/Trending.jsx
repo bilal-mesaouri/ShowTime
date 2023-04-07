@@ -59,6 +59,12 @@ function Trending(props) {
           <span className="trbox">
             <span className="trtitle">Runtime :</span> 3h 1min
           </span>
+          <span className="trbox">
+            <span className="trtitle">Genre :</span> {Datos[Index]["genre"]}
+          </span>
+          <span className="trbox">
+          <div className="trdesbox">Summary :</div> {Datos[Index]["summary"]}
+          </span>
         </div>
         <div className="change_btn">
           {props.parent == "home" && (

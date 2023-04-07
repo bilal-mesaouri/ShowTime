@@ -8,3 +8,13 @@ export function findAll(){
     return data;
 
 }
+
+
+export function findLatest(){
+    const data = axiosClient.get('movies/latest').then((res)=>{
+        return res.data ;
+    });
+
+    return data;
+
+}

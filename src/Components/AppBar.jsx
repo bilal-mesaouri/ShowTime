@@ -16,7 +16,7 @@ function AppBar(props) {
             <Search />
           </button>
         </div>
-        <div className="searchField">
+        {/* <div className="searchField">
           {props.data.map(movie =>{
             console.log(movie);
             return(
@@ -27,7 +27,7 @@ function AppBar(props) {
           })}
 
 
-        </div>
+        </div> */}
 
       </div>
       <div className="app-bar-watchlist">
