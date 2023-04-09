@@ -33,7 +33,8 @@
 }
 .searchField{
   background-color: aliceblue;
-  width: 269px;
+  min-width: max-content;
+  max-width: 269px;
   position: absolute;
   z-index: 9;
   height: max-content;

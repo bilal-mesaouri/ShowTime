@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState,useEffect } from 'react'
-import Trending from '../Trending'
 import { findAll } from '../../Network/Lib/Movies'
 import PrimarySearchAppBar from '../AppBar'
 import PopularNow from '../PopularNow'
@@ -18,7 +17,7 @@ function Watchlist() {
     }, [])
   return (
     Popular?<div>
-        <PrimarySearchAppBar/>
+        <PrimarySearchAppBar data={data} />
         <PopularNow data={Popular} title={"Your Watchlist"}/>
         <PopularNow data={Popular} title={""}/>
         <PopularNow data={Popular} title={""}/>

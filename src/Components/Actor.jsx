@@ -16,7 +16,7 @@ function Actor(props) {
        Movie Name : {moviename}
        </div>
        <div>
-       Actual Name : {firstname}{lastname}
+       Actual Name : {firstname} {lastname}
        </div>
        <div>
        Date of Birth : {dob}
