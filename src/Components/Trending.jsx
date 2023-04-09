@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import avengers from "../assets/avengers.jpg";
 import "./Trending.css";
 import { AiOutlineRightCircle, AiOutlineLeftCircle } from "react-icons/ai";
-import { useLocation } from "react-router-dom";
 
 function Trending(props) {
-  let location = useLocation();
+  const [Datos, setDatoss] = useState(props.data);
+  
   const [Index, setIndex] = useState(0);
   const options = {
     weekday: "long",
@@ -13,13 +12,9 @@ function Trending(props) {
     month: "short",
     day: "numeric",
   };
-  const arr = [];
-  location.state && arr.push(location.state.data);
-  const [Datos, setDatos] = useState(location.state == null ? props.data : arr);
-  location.state && console.log(location.state.data);
 
   return (
-    <div className="trcontainer">
+    Datos?<div className="trcontainer">
       <div className="popularnowtitle">{props.title}</div>
       <div className="trcon">
         <div className="change_btn">
@@ -65,14 +60,14 @@ function Trending(props) {
             <AiOutlineRightCircle
               className="icons"
               onClick={() => {
-                if (Index < props.data.length - 1) setIndex(Index + 1);
+                if (Index < Datos.length - 1) setIndex(Index + 1);
               }}
             />
           )}
         </div>
       </div>
       <div className="controlpanel"></div>
-    </div>
+    </div>:<div>Loading ...</div>
   );
 }
 
