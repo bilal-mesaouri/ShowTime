@@ -18,3 +18,11 @@ export function findLatest(){
     return data;
 
 }
+
+export function authenticate(datos){
+    const data = axiosClient.get('auth',{data:datos}).then((res)=>{
+        return res.data ;
+    });
+
+    return data;
+}

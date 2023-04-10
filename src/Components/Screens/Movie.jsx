@@ -23,19 +23,20 @@ function Movie() {
 
   let actors = Datos[0].actors
   let reviews = Datos[0].reviews
-
+  console.log("actorrrrs ---> ",actors);
+  console.log("reviewwwwws ---> ",reviews);
   const actorList = [];
   const reviewList = [];
 
   actors.forEach((item) => {
     actorList.push(
-      <Actor moviename={item.moviename} firstname={item.actor._id.$oid.firstname} lastname={item.actor._id.$oid.lastname}  dob={item.actor._id.$oid.dob.split('T')[0]} />
+      <Actor moviename={item.moviename} firstname={item.actor._id.firstname} lastname={item.actor._id.lastname}  dob={item.actor._id.dob.split('T')[0]} />
     );
   });
 
   reviews.forEach((item) => {
     reviewList.push(
-      <MovieReview date = {item.review._id.$oid.date.split('T')[0]} title={item.review._id.$oid.review} author={item.review._id.$oid.author} rating={item.review._id.$oid.rating} review={item.review._id.$oid.comment}/>
+      <MovieReview date = {item.review._id.date.split('T')[0]} title={item.review._id.review} author={item.review._id.author} rating={item.review._id.rating} review={item.review._id.comment}/>
 
     );
   });

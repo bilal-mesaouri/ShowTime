@@ -1,6 +1,7 @@
 .suggestion{
-    height: 40px;
-    width: 232px;
+    height: max-content;
+    padding: 5px;
+    width: 350px;
     border-bottom: 1px solid red;
     background-color: black;
     display: flex;
